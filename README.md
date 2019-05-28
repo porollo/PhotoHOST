@@ -1,6 +1,4 @@
-# Photohost
-
-#  Vue.js client
+# PhotoHost node.js server and Vue.js client
 
 ## Project setup
 ```
@@ -29,4 +27,3 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-# PhotoHost
