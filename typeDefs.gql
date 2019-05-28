@@ -1,0 +1,43 @@
+type User {
+	_id: ID
+	username: String!
+	email: String!
+	password: String!
+	avatar: String
+	joinDate: String
+	lastLoginDate: String
+	birthDate: String
+	country: String!
+	city: String!
+	favorites: [Post]
+}
+
+type Post {
+	_id: ID
+	title: String!
+	imageUrl: String!
+	categories: [String]!
+	description: String!
+	createdDate: String
+	createdBy: User!
+	likes: Int
+	messages: [Message]
+}
+
+type Message {
+	_id: ID
+	messsageTitle: String!
+	messageBody: String!
+	messageDate: String !
+	messageOwner: User!
+}
+
+type Mutation {
+	signupUser (username: String!, email: String!, password: String!): User!
+	addPost (title: String!, imageUrl: String!, categories: [String]!, description: String!, creatorId: ID!): Post!
+
+}
+
+type Query {
+	getPosts: [Post]
+}
