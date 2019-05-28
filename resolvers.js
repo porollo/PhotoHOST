@@ -1,3 +1,5 @@
+const bcrypt = require("bcrypt");
+
 module.exports = {
   Query: {
     getPosts: async (_, args, { Post }) => {
@@ -25,6 +27,18 @@ module.exports = {
         createdBy: creatorId
       }).save()
       return newPost
+    },
+
+    signinUser: async (_, { username, password }, { User }) => {
+      const user = await User.findOne({ username });
+      if (!user) {
+        throw new Error('User Not Found');
+      }
+      const isPasswordValid = await bcrypt.compare(password, user.password);
+      if (!isPasswordValid) {
+        throw new Error('Password Is Not Valid');
+      }
+      return user;
     },
 
     signupUser: async (_, { username, email, password }, { User }) => {

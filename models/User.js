@@ -62,9 +62,8 @@ UserSchema.pre('save', function (next) {
       if (err) return next(err);
       this.password = hash;
       next();
-    })
-
+    });
   });
-})
+});
 
 module.exports = mongoose.model("User", UserSchema);

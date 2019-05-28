@@ -35,7 +35,7 @@ type Message {
 type Mutation {
 	signupUser (username: String!, email: String!, password: String!): User!
 	addPost (title: String!, imageUrl: String!, categories: [String]!, description: String!, creatorId: ID!): Post!
-
+	signinUser (username: String!, password: String!): User!
 }
 
 type Query {
