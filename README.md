@@ -1,6 +1,6 @@
 # Photohost
 
-# client
+#  Vue.js client
 
 ## Project setup
 ```
