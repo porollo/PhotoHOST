@@ -1,4 +1,9 @@
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+
+const createToken = (user, secret, expiresIn) => {
+  return jwt.sign()
+}
 
 module.exports = {
   Query: {
